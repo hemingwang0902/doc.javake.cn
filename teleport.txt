@@ -1,0 +1,12 @@
+说明： 以下全部为正则表达式模式替换
+
+ tppabs="https?://.+?"
+/\*tpa=https?://.+?\*/
+ onclick="_hmt\.push\(.+?\)"
+将这 3 项全部替换为空白字符串
+
+ href="javascript:if\(confirm\(%27.+?\\n\\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address\.  \\n\\nDo you want to open it from the server\?%27\)\)window\.location=%27(.+?)%27"
+--> href="$1"
+
+ href="javascript:if\(confirm\(%27.+? \\n\\nThis file was not retrieved by Teleport Pro, because it is addressed using an unsupported protocol \(e\.g\., gopher\)\.  \\n\\nDo you want to open it from the server\?%27\)\)window\.location=%27(.+?)%27"
+--> href="$1"
